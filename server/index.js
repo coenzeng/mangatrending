@@ -14,10 +14,7 @@ app.use(bodyParser.urlencoded({limit: "20mb", extended: true}));
 
 app.use(cors());
 
-//mongo atlas (AWS IAM)
-
-//const CONNECTION_URL = "mongodb+srv://AKIA34W4L6JSAYOIDFQQ:axc7V4XQQmDqjaTY2S5zRgI6VPi/R70nqn1LTTYH@mangatrending.g3vic.mongodb.net/myFirstDatabase?authSource=%24external&authMechanism=MONGODB-AWS&retryWrites=true&w=majority&authMechanismProperties=AWS_SESSION_TOKEN:<session token (for AWS IAM Roles)>"
-
+//mongo atlas connection
 const CONNECTION_URL = `mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@mangatrending.g3vic.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
 const PORT = process.env.PORT || 5000;
 
