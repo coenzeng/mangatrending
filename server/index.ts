@@ -1,4 +1,6 @@
-import express from 'express';
+"use strict";
+
+import express, { Application } from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
@@ -7,12 +9,13 @@ import dotenv from 'dotenv';
 //configure dotenv to read .env file from root directory
 dotenv.config({ path: "../.env" });
 
-const app = express();
+const app: Application = express();
 
-app.use(bodyParser.json({limit: "20mb", extended: true}));
-app.use(bodyParser.urlencoded({limit: "20mb", extended: true}));
+//app.use(bodyParser.json({limit: "20mb", extended: true}));
+//app.use(bodyParser.urlencoded({limit: "20mb", extended: true}));
 
 app.use(cors());
+
 
 //mongo atlas (AWS IAM)
 
